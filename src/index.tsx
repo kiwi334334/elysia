@@ -4,10 +4,11 @@ import { Elysia } from "elysia";
 const app = new Elysia();
 app.use(html());
 
-function BaseHTML({title, children}) {
+function BaseHTML({ title, children }) {
   return (
     <html lang="en">
       <head>
+        <script src="https://unpkg.com/htmx.org@1.9.8"></script>
         <title>
           {title}
         </title>
@@ -22,7 +23,7 @@ function BaseHTML({title, children}) {
 app.get("/", () => (
   <BaseHTML title={"Hello"}>
     <h1>Hello</h1>
-  </BaseHTML> 
+  </BaseHTML>
 ));
 
 app.listen(3000);
